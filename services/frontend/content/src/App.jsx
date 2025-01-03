@@ -159,27 +159,103 @@ import './App.css'
 
 // some example of How to use usestate
 
+// function Aboutyou() {
+//   const [fname, setFname] = useState("Aehsan");
+//   const [lname, setLname] = useState("Shams");
+//   const [byear, setByear] = useState('2002');
+//   const [height, setHeight] = useState('6fit');
+//   const [color, setColor] = useState("yellow-Brown");
+//   const [eyecolor, setEyecolor] = useState("black");
+//   return (
+//     <>
+//       <h3>My Name Is {fname} {lname}</h3>
+//       <p>
+//         and I Born in {byear} Height {height} Color {color} and Eyecolor {eyecolor}.
+//       </p>
+//     </>
+//   )
+// }
+// function App(){
+//   return(
+//     <div>
+//       < Aboutyou/>
+//     </div>
+//   )
+// }
+
+// Create a single Hook that holds an object:
+
 function Aboutyou() {
-  const [fname, setFname] = useState("Aehsan");
-  const [lname, setLname] = useState("Shams");
-  const [byear, setByear] = useState('2002');
-  const [height, setHeight] = useState('6fit');
-  const [color, setColor] = useState("yellow-Brown");
-  const [eyecolor, setEyecolor] = useState("black");
+  const [aboutyou, setAboutyou] = useState({
+    fname: 'Aehsan',
+    lname: 'Shams',
+    byear: '2002',
+    height: '6ft',
+    color: 'yellow-brown',
+    eyecolor: 'black'
+  });
   return (
     <>
-      <h3>My Name Is {fname} {lname}</h3>
+      <h2>About me</h2>
+      <h3>My name is {aboutyou.fname} {aboutyou.lname}</h3>
       <p>
-        and I Born in {byear} Height {height} Color {color} and Eyecolor {eyecolor}.
+        and my birth year is {aboutyou.byear}
+        height {aboutyou.height}
+        color {aboutyou.color}
+        and eyecolor {aboutyou.eyecolor}
       </p>
     </>
   )
 }
-function App(){
-  return(
+function App() {
+  return (
     <div>
-      < Aboutyou/>
+      < Aboutyou />
     </div>
   )
 }
+
+// Use the JavaScript spread operator to update only the eyeColor of the Aboutyou:
+
+// function Aboutyou() {
+//   const [aboutyou, setAboutyou] = useState({
+//     fname: 'Aehsan',
+//     lname: 'Shams',
+//     byear: '2002',
+//     height: '6ft',
+//     color: 'yellow-brown',
+//     eyecolor: 'black'
+//   });
+//   const updateEyeColor = () => {
+//     setAboutyou(previousState => {
+//       return {...previousState, eyecolor: "brown"}
+//     });
+//   }
+//   return (
+//     <>
+//       <h2>About me</h2>
+//         <h3>My name is {aboutyou.fname} {aboutyou.lname}</h3>
+//           <p>
+//             and my birth year is {aboutyou.byear}
+//             height {aboutyou.height}
+//             color {aboutyou.color}
+//             and eyecolor {aboutyou.eyecolor}
+//           </p>  
+//       <button
+//         type="button"
+//         onClick={updateEyeColor}
+//       >Blue</button>
+//     </>
+//   )
+// }
+// function App() {
+//   return (
+//     <div>
+//       <Aboutyou />
+//     </div>
+//   )
+// }
+
+
+
 export default App;

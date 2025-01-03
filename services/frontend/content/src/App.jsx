@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import React from 'react'
 import ReactDom from 'react-dom/client'
 import './App.css'
+import Useeffect from './Components/Useeffect'
 
 
 // function App() {
@@ -185,32 +186,33 @@ import './App.css'
 
 // Create a single Hook that holds an object:
 
-function Aboutyou() {
-  const [aboutyou, setAboutyou] = useState({
-    fname: 'Aehsan',
-    lname: 'Shams',
-    byear: '2002',
-    height: '6ft',
-    color: 'yellow-brown',
-    eyecolor: 'black'
-  });
-  return (
-    <>
-      <h2>About me</h2>
-      <h3>My name is {aboutyou.fname} {aboutyou.lname}</h3>
-      <p>
-        and my birth year is {aboutyou.byear}
-        height {aboutyou.height}
-        color {aboutyou.color}
-        and eyecolor {aboutyou.eyecolor}
-      </p>
-    </>
-  )
-}
+// function Aboutyou() {
+//   const [aboutyou, setAboutyou] = useState({
+//     fname: 'Aehsan',
+//     lname: 'Shams',
+//     byear: '2002',
+//     height: '6ft',
+//     color: 'yellow-brown',
+//     eyecolor: 'black'
+//   });
+//   return (
+//     <>
+//       <h2>About me</h2>
+//       <h3>My name is {aboutyou.fname} {aboutyou.lname}</h3>
+//       <p>
+//         and my birth year is {aboutyou.byear}
+//         height {aboutyou.height}
+//         color {aboutyou.color}
+//         and eyecolor {aboutyou.eyecolor}
+//       </p>
+//     </>
+//   )
+// }
 function App() {
   return (
     <div>
-      < Aboutyou />
+      {/* < Aboutyou /> */}
+      { <Timer /> }
     </div>
   )
 }
@@ -255,6 +257,7 @@ function App() {
 //     </div>
 //   )
 // }
+
 
 
 

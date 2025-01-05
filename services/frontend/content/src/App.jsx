@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import React from 'react';
@@ -219,62 +219,62 @@ import './App.css'
 
 // Use the JavaScript spread operator to update only the eyeColor of the Aboutyou:
 
-function Aboutyou() {
-  const [aboutyou, setAboutyou] = useState({
-    fname: 'Aehsan',
-    lname: 'Shams',
-    byear: '2002',
-    height: '6ft',
-    color: 'yellow-brown',
-    eyecolor: 'black'
-  });
-  const updateEyeColor = () => {
-    setAboutyou(previousState => {
-      return {...previousState, eyecolor: "brown"}
-    });
-  }
-  return (
-    <>
-      <h2>About me</h2>
-        <h3>My name is {aboutyou.fname} {aboutyou.lname}</h3>
-          <p>
-            and my birth year is {aboutyou.byear}
-            height {aboutyou.height}
-            color {aboutyou.color}
-            and eyecolor {aboutyou.eyecolor}
-          </p>  
-      <button
-        type="button"
-        onClick={updateEyeColor}
-      >Blue</button>
-    </>
-  )
-}
-function App() {
-  return (
-    <div>
-      <Aboutyou />
-    </div>
-  )
-}
+// function Aboutyou() {
+//   const [aboutyou, setAboutyou] = useState({
+//     fname: 'Aehsan',
+//     lname: 'Shams',
+//     byear: '2002',
+//     height: '6ft',
+//     color: 'yellow-brown',
+//     eyecolor: 'black'
+//   });
+//   const updateEyeColor = () => {
+//     setAboutyou(previousState => {
+//       return {...previousState, eyecolor: "brown"}
+//     });
+//   }
+//   return (
+//     <>
+//       <h2>About me</h2>
+//         <h3>My name is {aboutyou.fname} {aboutyou.lname}</h3>
+//           <p>
+//             and my birth year is {aboutyou.byear}
+//             height {aboutyou.height}
+//             color {aboutyou.color}
+//             and eyecolor {aboutyou.eyecolor}
+//           </p>  
+//       <button
+//         type="button"
+//         onClick={updateEyeColor}
+//       >Blue</button>
+//     </>
+//   )
+// }
+// function App() {
+//   return (
+//     <div>
+//       <Aboutyou />
+//     </div>
+//   )
+// }
 
 // useEfffect
 
-// function Timer() {
-//   const [count, setCount] = useState(0);
+function Timer() {
+  const [count, setCount] = useState(0);
 
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setCount((count) => count + 1);
-//     }, 1000);
-//   });
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  });
 
-//   return <h1>I've rendered {count} times!</h1>;
-// }
-// function App(){
-//   <div>
-//     < Timer/>
-//   </div>
-// }
+  return <h1>I've rendered {count} times!</h1>;
+}
+function App(){
+  <div>
+    < Timer/>
+  </div>
+}
 
 export default App;

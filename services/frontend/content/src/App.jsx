@@ -133,29 +133,29 @@ import './App.css'
 // import { useState } from "react";
 // import ReactDOM from "react-dom/client";
 
-// function Car() {
-//   const [brand, setBrand] = useState("Ford");
-//   const [model, setModel] = useState("Mustang");
-//   const [year, setYear] = useState("1964");
-//   const [color, setColor] = useState("red");
+function Car() {
+  const [brand, setBrand] = useState("Ford");
+  const [model, setModel] = useState("Mustang");
+  const [year, setYear] = useState("1964");
+  const [color, setColor] = useState("red");
 
-//   return (
-//     <>
-//       <h1>My {brand}</h1>
-//       <p>
-//         It is a {color} {model} from {year}.
-//       </p>
-//     </>
-//   )
-// }
+  return (
+    <>
+      <h1>My {brand}</h1>
+      <p>
+        It is a {color} {model} from {year}.
+      </p>
+    </>
+  )
+}
 
-// function App() {
-//   return (
-//     <div>
-//       < Car />
-//     </div>
-//   )
-// }
+function App() {
+  return (
+    <div>
+      < Car />
+    </div>
+  )
+}
 
 
 // some example of How to use usestate
@@ -260,21 +260,21 @@ import './App.css'
 
 // useEfffect
 
-function Timer() {
-  const [count, setCount] = useState(0);
+// function Timer() {
+//   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCount((count) => count + 1);
-    }, 1000);
-  });
+//   useEffect(() => {
+//     setTimeout(() => {
+//       setCount((count) => count + 1);
+//     }, 1000);
+//   });
 
-  return <h1>I've rendered {count} times!</h1>;
-}
-function App(){
-  <div>
-    < Timer/>
-  </div>
-}
+//   return <h1>I've rendered {count} times!</h1>;
+// }
+// function App(){
+//   <div>
+//     < Timer/>
+//   </div>
+// }
 
 export default App;

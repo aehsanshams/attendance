@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css'
-import UserLogin from './components/UserLogin';
+import UserLogin from './components/Auth/UserLogin';
 import HomePage from './components/HomePage';
-import SignUpForm from './components/SignUp';
+import SignUpForm from './components/Auth/SignUp';
 import { BrowserRouter, Routes, Route } from "react-router";
 
 function App() {

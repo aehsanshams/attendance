@@ -12,15 +12,19 @@ function LoginForm({ onLoginSuccess }) {
     if (!email || !password) {
       setErrorMessage('Both fields are required.');
       return;
+    }else {
+      alert('Login Successful');
+      onLoginSuccess();
     }
 
+
     // Mock authentication logic
-    if (email === 'user@example.com' && password === 'password123') {
-      alert('Login successful!');
-      onLoginSuccess();
-    } else {
-      setErrorMessage('Invalid email or password.');
-    }
+    // if (email === 'user@example.com' && password === 'password123') {
+    //   alert('Login successful!');
+    //   onLoginSuccess();
+    // } else {
+    //   setErrorMessage('Invalid email or password.');
+    // }
   };
 
   return (

@@ -1,27 +1,25 @@
 import React, {useState} from 'react';
 import './App.css'
 import UserLogin from './components/UserLogin';
-
+import HomePage from './components/HomePage';
+import SignUpForm from './components/SignUp';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
-
   return (
-    <div>
-      {isLoggedIn ? (
-        <HomePage onLogout={handleLogout} />
-      ) : (
-        <UserLogin onLoginSuccess={handleLogin} />
-      )}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+          {/* <Route path="login" element={<UserLogin />} /> */}
+          {/* <Route path="register" element={<SignUpForm />} /> */}
+          {/* <Route path="contact" element={<Contact />} /> */}
+          {/* <Route index element={<HomePage />} /> */}
+        </Route>
+        <Route path="/login" element={<UserLogin />} />
+        <Route path="/register" element={<SignUpForm />} />
+        {/* <Route path="*" element={<NoPage />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

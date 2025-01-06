@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { NavLink } from "react-router";
+
 
 function SignUpForm({ onSignUpSuccess }) {
     const [email, setEmail] = useState('');
@@ -22,6 +24,14 @@ function SignUpForm({ onSignUpSuccess }) {
         }
         // onSignUpSuccess();
     }
+
+    const loginStyle = {
+      background: 'none',
+      border: 'none',
+      color: '#007BFF',
+      textDecoration: 'underline',
+      cursor: 'pointer',
+    };
 
 
 
@@ -66,19 +76,7 @@ return (
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Sign Up</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        if you have already Registerd?{' '}
-        <button
-          // onClick={onSignUp}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#007BFF',
-            textDecoration: 'underline',
-            cursor: 'pointer',
-          }}
-        >
-          Login
-        </button>
+        if you have already Registerd?{' '} <NavLink style={loginStyle} to='/login'>Login</NavLink>
       </p>
     </div>
   );

@@ -3,6 +3,7 @@ import './App.css'
 import UserLogin from './components/Auth/UserLogin';
 import HomePage from './components/HomePage';
 import SignUpForm from './components/Auth/SignUp';
+import ForgotPassword from './components/Auth/ForgotPassword';
 import { BrowserRouter, Routes, Route } from "react-router";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         </Route>
         <Route path="/login" element={<UserLogin />} />
         <Route path="/register" element={<SignUpForm />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </BrowserRouter>

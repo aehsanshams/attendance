@@ -68,7 +68,7 @@ function LoginForm({ onLoginSuccess }) {
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Login</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Don't have an account?{' '}<NavLink style={SignUpStyle} to='/signUp'>SignUp</NavLink>
+        Don't have an account?{' '}<NavLink style={SignUpStyle} to='/register'>SignUp</NavLink>
       </p>
     </div>
   );

@@ -40,7 +40,7 @@ function ForgotPassword({ onLoginSuccess }) {
 
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
-      <h2>Login</h2>
+      <h2>Forgot Password</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '15px' }}>
@@ -54,21 +54,10 @@ function ForgotPassword({ onLoginSuccess }) {
             required
           />
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="password" style={{ display: 'block', marginBottom: '5px' }}>Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
-            required
-          />
-        </div>
-        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Login</button>
+        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Retrive Password</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Don't have an account?{' '}<NavLink style={SignUpStyle} to='/register'>SignUp</NavLink>
+        Back to Login{' '}<NavLink style={SignUpStyle} to='/login'>Login</NavLink>
       </p>
     </div>
   );

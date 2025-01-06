@@ -70,6 +70,10 @@ function LoginForm({ onLoginSuccess }) {
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
         Don't have an account?{' '}<NavLink style={SignUpStyle} to='/register'>SignUp</NavLink>
       </p>
+
+      <p style={{ textAlign: 'center', marginTop: '15px' }}>
+        Forgot Password?{' '}<NavLink style={SignUpStyle} to='/forgot-password'>Recover</NavLink>
+      </p>
     </div>
   );
 }

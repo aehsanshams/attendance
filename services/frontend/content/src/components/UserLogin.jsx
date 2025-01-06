@@ -52,6 +52,21 @@ function LoginForm({ onLoginSuccess }) {
         </div>
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Login</button>
       </form>
+      <p style={{ textAlign: 'center', marginTop: '15px' }}>
+        Don't have an account?{' '}
+        <button
+          // onClick={onSignUp}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#007BFF',
+            textDecoration: 'underline',
+            cursor: 'pointer',
+          }}
+        >
+          Sign Up
+        </button>
+      </p>
     </div>
   );
 }

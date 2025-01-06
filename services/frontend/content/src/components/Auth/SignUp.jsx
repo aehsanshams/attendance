@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router";
-import { ButtonStyle, NavLinks, DivS } from './../../assets/styles';
+import style from './../../assets/styles';
 
 function SignUpForm({ onSignUpSuccess }) {
   const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ function SignUpForm({ onSignUpSuccess }) {
   }
 
   return (
-    <div style={DivS}>
+    <div style={style.Container}>
       <h2>Sign Up</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
@@ -63,10 +63,10 @@ function SignUpForm({ onSignUpSuccess }) {
             required
           />
         </div>
-        <button type="submit" style={ButtonStyle}>Sign Up</button>
+        <button type="submit" style={style.ButtonStyle}>Sign Up</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        if you have already Registerd?{' '} <NavLink style={NavLinks} to='/login'>Login</NavLink>
+        if you have already Registerd?{' '} <NavLink style={style.NavLink} to='/login'>Login</NavLink>
       </p>
     </div>
   );

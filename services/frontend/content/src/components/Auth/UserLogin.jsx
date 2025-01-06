@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router";
-import { ButtonStyle, NavLinks, DivS } from './../../assets/styles';
+import { ButtonStyle, NavLink as NavLinkStyle, Container } from './../../assets/styles';
 
 
 function LoginForm({ onLoginSuccess }) {
@@ -21,7 +21,7 @@ function LoginForm({ onLoginSuccess }) {
   };
 
   return (
-    <div style={DivS}>
+    <div style={Container}>
       <h2>Login</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
@@ -50,11 +50,11 @@ function LoginForm({ onLoginSuccess }) {
         <button type="submit" style={ButtonStyle}>Login</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Don't have an account?{' '}<NavLink style={NavLinks} to='/register'>SignUp</NavLink>
+        Don't have an account?{' '}<NavLink style={NavLinkStyle} to='/register'>SignUp</NavLink>
       </p>
 
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Forgot Password?{' '}<NavLink style={NavLinks} to='/forgot-password'>Recover</NavLink>
+        Forgot Password?{' '}<NavLink style={NavLinkStyle} to='/forgot-password'>Recover</NavLink>
       </p>
     </div>
   );

@@ -6,17 +6,25 @@ export const ButtonStyle = {
     border: 'none', 
     borderRadius: '4px' 
 };
-export const NavLinks = {
+export const NavLink = {
     background: 'none',
     border: 'none',
     color: '#007BFF',
     textDecoration: 'underline',
     cursor: 'pointer',
 };
-export const DivS = { 
+export const Container = { 
     maxWidth: '400px', 
     margin: 'auto', 
     padding: '20px', 
     border: '1px solid #ccc', 
     borderRadius: '8px' 
 };
+
+const All = {
+    ButtonStyle,
+    NavLink,
+    Container
+}
+
+export default All;

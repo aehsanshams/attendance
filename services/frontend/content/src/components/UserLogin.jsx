@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router";
 
 
 function LoginForm({ onLoginSuccess }) {
@@ -25,6 +26,16 @@ function LoginForm({ onLoginSuccess }) {
     // } else {
     //   setErrorMessage('Invalid email or password.');
     // }
+  };
+
+  const SignUpStyle = {
+    
+      background: 'none',
+      border: 'none',
+      color: '#007BFF',
+      textDecoration: 'underline',
+      cursor: 'pointer',
+    
   };
 
   return (
@@ -57,19 +68,7 @@ function LoginForm({ onLoginSuccess }) {
         <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Login</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Don't have an account?{' '}
-        <button
-          // onClick={onSignUp}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#007BFF',
-            textDecoration: 'underline',
-            cursor: 'pointer',
-          }}
-        >
-          Sign Up
-        </button>
+        Don't have an account?{' '}<NavLink style={SignUpStyle} to='/signUp'>SignUp</NavLink>
       </p>
     </div>
   );

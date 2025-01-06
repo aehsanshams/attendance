@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function SignUpForm({ onSignUp }) {
+function SignUpForm({ onSignUpSuccess }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -13,11 +13,14 @@ function SignUpForm({ onSignUp }) {
             setErrorMessage('All fields are required.');
             return;
         }
-        if (password !== confirmPassword) {
+        else if (password !== confirmPassword) {
             setErrorMessage('Passwords do not match.');
             return;
+        }else {
+          alert('SignUp Successful');
+          onSignUpSuccess();
         }
-        onSignUp();
+        // onSignUpSuccess();
     }
 
 

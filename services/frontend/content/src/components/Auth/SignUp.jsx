@@ -1,42 +1,32 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router";
-
+import { ButtonStyle, NavLinks, DivS } from './../../assets/styles';
 
 function SignUpForm({ onSignUpSuccess }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-        if (!email || !password || !confirmPassword) {
-            setErrorMessage('All fields are required.');
-            return;
-        }
-        else if (password !== confirmPassword) {
-            setErrorMessage('Passwords do not match.');
-            return;
-        }else {
-          alert('SignUp Successful');
-          onSignUpSuccess();
-        }
-        // onSignUpSuccess();
+    if (!email || !password || !confirmPassword) {
+      setErrorMessage('All fields are required.');
+      return;
     }
+    else if (password !== confirmPassword) {
+      setErrorMessage('Passwords do not match.');
+      return;
+    } else {
+      alert('SignUp Successful');
+      onSignUpSuccess();
+    }
+    // onSignUpSuccess();
+  }
 
-    const loginStyle = {
-      background: 'none',
-      border: 'none',
-      color: '#007BFF',
-      textDecoration: 'underline',
-      cursor: 'pointer',
-    };
-
-
-
-return (
-    <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
+  return (
+    <div style={DivS}>
       <h2>Sign Up</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
@@ -73,13 +63,13 @@ return (
             required
           />
         </div>
-        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Sign Up</button>
+        <button type="submit" style={ButtonStyle}>Sign Up</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        if you have already Registerd?{' '} <NavLink style={loginStyle} to='/login'>Login</NavLink>
+        if you have already Registerd?{' '} <NavLink style={NavLinks} to='/login'>Login</NavLink>
       </p>
     </div>
   );
-} 
+}
 
 export default SignUpForm;

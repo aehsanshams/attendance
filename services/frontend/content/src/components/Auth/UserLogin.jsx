@@ -1,45 +1,27 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router";
+import { ButtonStyle, NavLinks, DivS } from './../../assets/styles';
 
 
 function LoginForm({ onLoginSuccess }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     if (!email || !password) {
       setErrorMessage('Both fields are required.');
       return;
-    }else {
+    } else {
       alert('Login Successful');
       onLoginSuccess();
     }
-
-
-    // Mock authentication logic
-    // if (email === 'user@example.com' && password === 'password123') {
-    //   alert('Login successful!');
-    //   onLoginSuccess();
-    // } else {
-    //   setErrorMessage('Invalid email or password.');
-    // }
-  };
-
-  const SignUpStyle = {
-    
-      background: 'none',
-      border: 'none',
-      color: '#007BFF',
-      textDecoration: 'underline',
-      cursor: 'pointer',
-    
   };
 
   return (
-    <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
+    <div style={DivS}>
       <h2>Login</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
@@ -65,14 +47,14 @@ function LoginForm({ onLoginSuccess }) {
             required
           />
         </div>
-        <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '4px' }}>Login</button>
+        <button type="submit" style={ButtonStyle}>Login</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Don't have an account?{' '}<NavLink style={SignUpStyle} to='/register'>SignUp</NavLink>
+        Don't have an account?{' '}<NavLink style={NavLinks} to='/register'>SignUp</NavLink>
       </p>
 
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Forgot Password?{' '}<NavLink style={SignUpStyle} to='/forgot-password'>Recover</NavLink>
+        Forgot Password?{' '}<NavLink style={NavLinks} to='/forgot-password'>Recover</NavLink>
       </p>
     </div>
   );

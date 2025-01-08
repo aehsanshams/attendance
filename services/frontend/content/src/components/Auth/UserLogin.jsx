@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router";
 import { ButtonStyle, NavLink as NavLinkStyle, Container } from './../../assets/styles';
+import api from 'axios';
+import { redirect, useNavigate } from "react-router";
 
 
 function LoginForm({ onLoginSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,15 +18,27 @@ function LoginForm({ onLoginSuccess }) {
       setErrorMessage('Both fields are required.');
       return;
     }
-      alert('Login Successful');
-      onLoginSuccess();
+      const reqData = {
+            email,
+            password,
+          };
+          api.post('http://localhost/login.php', reqData)
+          .then(function (response) {
+            console.log(response);
+            alert('Login Successful');
+            return navigate('/');
+          })
+          .catch(function (error) {
+            console.log(error);
+            setErrorMessage('login was not successful');
+          });
   };
 
   return (
     <div style={Container}>
       <h2>Login</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      <form>
+      {/* <form> */}
         <div style={{ marginBottom: '15px' }}>
           <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>Email:</label>
           <input
@@ -46,8 +61,8 @@ function LoginForm({ onLoginSuccess }) {
             required
           />
         </div>
-        <button onSubmit={handleSubmit} type="submit" style={ButtonStyle}>Login</button>
-      </form>
+        <button onClick={handleSubmit} type="submit" style={ButtonStyle}>Login</button>
+      {/* </form> */}
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
         Don't have an account?{' '}<NavLink style={NavLinkStyle} to='/register'>SignUp</NavLink>
       </p>

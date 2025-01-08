@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__.'/cors.php');
 
 $email = $_POST['email'];
 $password = $_POST['password'];

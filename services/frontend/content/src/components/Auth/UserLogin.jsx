@@ -14,17 +14,16 @@ function LoginForm({ onLoginSuccess }) {
     if (!email || !password) {
       setErrorMessage('Both fields are required.');
       return;
-    } else {
+    }
       alert('Login Successful');
       onLoginSuccess();
-    }
   };
 
   return (
     <div style={Container}>
       <h2>Login</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-      <form onSubmit={handleSubmit}>
+      <form>
         <div style={{ marginBottom: '15px' }}>
           <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>Email:</label>
           <input
@@ -47,7 +46,7 @@ function LoginForm({ onLoginSuccess }) {
             required
           />
         </div>
-        <button type="submit" style={ButtonStyle}>Login</button>
+        <button onSubmit={handleSubmit} type="submit" style={ButtonStyle}>Login</button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
         Don't have an account?{' '}<NavLink style={NavLinkStyle} to='/register'>SignUp</NavLink>

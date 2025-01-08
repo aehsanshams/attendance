@@ -1,8 +1,12 @@
 <?php
+require_once(__DIR__.'/cors.php');
 
-$email = $_POST['email'];
-$password = $_POST['password'];
-$confirmPassword = $_POST['confirm_password'];
+$input = file_get_contents('php://input');
+$input = json_decode($input, true);
+
+$email = $input['email'];
+$password = $input['password'];
+// $confirmPassword = $input['confirm_password'];
 
 $directory_path = __DIR__.'/data';
 $atTheRate_placeHolder = 'afgfgh5258';
@@ -17,4 +21,4 @@ if (file_exists($file_path))
 
 file_put_contents($file_path, $password);
 
-echo 'Registration Successfyl';
+echo 'Registration Successful';

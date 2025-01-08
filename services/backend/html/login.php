@@ -1,8 +1,11 @@
 <?php
 require_once(__DIR__.'/cors.php');
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$input = file_get_contents('php://input');
+$input = json_decode($input, true);
+
+$email = $input['email'];
+$password = $input['password'];
 
 $directory_path = __DIR__.'/data';
 $atTheRate_placeHolder = 'afgfgh5258';

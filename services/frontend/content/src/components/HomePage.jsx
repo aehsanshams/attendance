@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
+
 function HomePage({ onLogout }) {
+
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px', textAlign: 'center' }}>
       <h2>Welcome to the Home Page!</h2>

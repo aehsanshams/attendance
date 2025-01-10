@@ -11,6 +11,10 @@ function LoginForm({ onLoginSuccess }) {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
+  const getTokenFromContent = (content) => {
+
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -26,6 +30,9 @@ function LoginForm({ onLoginSuccess }) {
           .then(function (response) {
             console.log(response);
             // alert('Login Successful');
+            const data = response.data;
+            const token = getTokenFromContent(data);
+            localStorage.setItem('token', token);
             return navigate('/');
           })
           .catch(function (error) {

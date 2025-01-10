@@ -25,7 +25,7 @@ function LoginForm({ onLoginSuccess }) {
           api.post('http://localhost/login.php', reqData)
           .then(function (response) {
             console.log(response);
-            alert('Login Successful');
+            // alert('Login Successful');
             return navigate('/');
           })
           .catch(function (error) {

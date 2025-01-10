@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 function HomePage({ onLogout }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{setLoading(false);}, 10000);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', padding: '20px', textAlign: 'center' }}>

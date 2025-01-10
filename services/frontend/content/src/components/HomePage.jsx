@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from 'axios';
 
 
 function HomePage({ onLogout }) {
@@ -6,7 +7,16 @@ function HomePage({ onLogout }) {
   const [content, setContent] = useState('');
 
   useEffect(()=>{
-    setTimeout(()=>{setLoading(false);}, 10000);
+     api.get('http://localhost/index.php')
+              .then(function (response) {
+                setContent(response.data);
+                setLoading(false);
+
+              })
+              .catch(function (error) {
+                console.log(error);
+                setLoading(false);
+              });
   }, []);
 
   if (loading) {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Protected({component}) {
+function Protected({Component}) {
     const [loading, setLoading] = useState(true);
 
     if(loading) {
@@ -9,5 +9,7 @@ function Protected({component}) {
         );
     }
 
-    return <component />
+    return <Component />
 }
+
+export default Protected;

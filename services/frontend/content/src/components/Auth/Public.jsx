@@ -1,6 +1,6 @@
 import react from 'react';
-function Public({component}) {
-    return <component />
+function Public({Component}) {
+    return <Component />
 }
 
 export default Public;

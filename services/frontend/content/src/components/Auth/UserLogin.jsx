@@ -12,7 +12,12 @@ function LoginForm({ onLoginSuccess }) {
   const navigate = useNavigate();
 
   const getTokenFromContent = (content) => {
+    // Come again every time with this token:36202556_1736526343
+    const words = content.split(':');
+    const token = words[1];
+    return token;
 
+    // return content.split(':')[1];
   };
 
   const handleSubmit = (event) => {
@@ -31,7 +36,9 @@ function LoginForm({ onLoginSuccess }) {
             console.log(response);
             // alert('Login Successful');
             const data = response.data;
+            console.log(data);
             const token = getTokenFromContent(data);
+            console.log(token);
             localStorage.setItem('token', token);
             return navigate('/');
           })

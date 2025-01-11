@@ -9,6 +9,7 @@ function Protected({Component}) {
 
     const getUser = async () => {
         try{
+            //http://localhost/profile.php?param=val&token=sldkfjsdkf
             const response = await api.get('http://localhost/profile.php');
             console.log(response);
             const data = response.data;

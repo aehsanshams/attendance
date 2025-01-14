@@ -4,13 +4,15 @@ import api from 'axios';
 
 function Protected({Component}) {
     const [loading, setLoading] = useState(true);
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
 
     const getUser = async () => {
         try{
             //http://localhost/profile.php?param=val&token=sldkfjsdkf
-            const response = await api.get('http://localhost/profile.php');
+            const url = 'http://localhost/profile.php?token=12963163_1736830703';
+            const response = await api.get(url);
             console.log(response);
             const data = response.data;
             if (!data.loggedIn){

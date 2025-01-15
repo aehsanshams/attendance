@@ -6,6 +6,7 @@ import { redirect, useNavigate } from "react-router";
 
 
 function SignUpForm() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -15,7 +16,7 @@ function SignUpForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!email || !password || !confirmPassword) {
+    if (!name || !email || !password || !confirmPassword) {
       setErrorMessage('All fields are required.');
       return;
     }
@@ -25,8 +26,10 @@ function SignUpForm() {
     }
 
     const reqData = {
+      name,
       email,
       password,
+      confirmPassword,
     };
     api.post('http://localhost/register.php', reqData)
     .then(function (response) {
@@ -45,6 +48,17 @@ function SignUpForm() {
       <h2>Sign Up</h2>
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form>
+      <div style={{ marginBottom: '15px' }}>
+          <label htmlFor="name" style={{ display: 'block', marginBottom: '5px' }}>Full Name:</label>
+          <input
+            type="Name"
+            id="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+            required
+          />
+        </div>
         <div style={{ marginBottom: '15px' }}>
           <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>Email:</label>
           <input

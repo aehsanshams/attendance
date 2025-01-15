@@ -5,9 +5,10 @@ require_once(__DIR__.'/libs/secured.php');
 $input = file_get_contents('php://input');
 $input = json_decode($input, true);
 
+$name = $input['name'];
 $email = $input['email'];
 $password = $input['password'];
-// $confirmPassword = $input['confirm_password'];
+$confirmPassword = $input['confirm_password'];
 
 $directory_path = __DIR__.'/data';
 $atTheRate_placeHolder = 'afgfgh5258';

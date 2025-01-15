@@ -1,6 +1,10 @@
 <?php
+include_once(__DIR__.'/cors.php');
 
-
+function getUserData()
+{
+    
+}
 
 function getUserFile()
 {

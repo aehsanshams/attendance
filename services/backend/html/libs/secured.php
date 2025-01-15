@@ -1,10 +1,32 @@
 <?php
-include_once(__DIR__.'/cors.php');
 
-function getUserData()
+/**
+ * input(array): [key1=>val1, key2=>value2, key_n=>value_n]
+ * 
+ * output(string):
+ * key1:val1\nkey2:value2\nkey_n:value_n
+ * 
+ */
+function arrayToString($array)
 {
+    $lines = '';
+    foreach($array as $key=>$value) {
+        $line = $key.':'.$value ."\n";
+        $lines = $lines.$line;
+    }
     
+    return $lines;
 }
+
+// $output = arrayToString(['key1'=>'val1', 'key2'=>'value2', 'key_n'=>'value_n']);
+// echo $output;
+// die();
+
+function stringToArray()
+{
+
+}
+
 
 function getUserFile()
 {

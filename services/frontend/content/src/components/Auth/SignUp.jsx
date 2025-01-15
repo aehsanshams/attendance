@@ -29,7 +29,6 @@ function SignUpForm() {
       name,
       email,
       password,
-      confirmPassword,
     };
     api.post('http://localhost/register.php', reqData)
     .then(function (response) {

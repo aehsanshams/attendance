@@ -18,15 +18,24 @@ function arrayToString($array)
     return $lines;
 }
 
-// $output = arrayToString(['key1'=>'val1', 'key2'=>'value2', 'key_n'=>'value_n']);
-// echo $output;
-// die();
-
-function stringToArray()
+/**
+ * input(string): key1:val1\nkey2:value2\nkey_n:value_n 
+ * outpu(array):  [key1=>val1, key2=>value2, key_n=>value_n]
+ */
+function stringToArray($string)
 {
+    $lines = explode("\n", $string);
+    $result = [];
+    foreach ($lines as $line) {
+        list($key, $value) = explode(":", $line);
+        $result[$key] = $value;
+    }
 
+    return $result;
 }
-
+$result = "key1:val1\nkey2:value2\nkey_n:value_n";
+var_dump($result);
+die();
 
 function getUserFile()
 {

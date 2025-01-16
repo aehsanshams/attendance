@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__.'/libs/cors.php');
-// require_once(__DIR__.'/libs/secured.php');
+require_once(__DIR__.'/libs/secured.php');
 
 $input = file_get_contents('php://input');
 $input = json_decode($input, true);

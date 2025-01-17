@@ -33,7 +33,7 @@ function SignUpForm() {
     api.post('http://localhost/register.php', reqData)
     .then(function (response) {
       console.log(response);
-      alert('SignUp Successful');
+      alert(response.data);
       return navigate('/login');
     })
     .catch(function (error) {

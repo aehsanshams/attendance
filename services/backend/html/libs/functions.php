@@ -27,8 +27,11 @@ function stringToArray($string)
     $lines = explode("\n", $string);
     $result = [];
     foreach ($lines as $line) {
-        list($key, $value) = explode(":", $line);
-        $result[$key] = $value;
+        $lineArray = explode(":", $line);
+        if(count($lineArray) !== 2){
+            continue;
+        }
+        $result[$lineArray[0]] = $lineArray[1];
     }
 
     return $result;

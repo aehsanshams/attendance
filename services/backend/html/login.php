@@ -39,9 +39,17 @@ if (!file_exists($file_path))
 }
 
 $data = file_get_contents($file_path);
-// 1234
+// name:Aehsan Shams
+// email:aehsanshams@gmail.com
+// password:12345
 
-if ($password === $data)
+$dataArray = stringToArray($data);
+// ["name"=>"Aehsan Shams" "email"=>"aehsanshams@gmail.com" "password"=>12345]
+
+$savedPassword = $dataArray['password'];
+// 12345
+
+if ($password === $savedPassword)
 // if password variable and data variable have same value like 1234, then it goes inside   
 {
     $token_file_path = __DIR__.'/token.txt';

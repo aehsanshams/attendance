@@ -11,7 +11,7 @@ function Protected({Component}) {
     const getUser = async () => {
         try{
             //http://localhost/profile.php?param=val&token=sldkfjsdkf
-            const url = 'http://localhost/profile.php?token=12963163_1736830703';
+            const url = 'http://localhost/profile.php?token='+localStorage.getItem('token');
             const response = await api.get(url);
             console.log(response);
             const data = response.data;

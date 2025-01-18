@@ -20,6 +20,15 @@ export const Container = {
     border: '1px solid #ccc', 
     borderRadius: '8px' 
 };
+export const ButtonStyle1 = {
+    width: '50%', 
+    padding: '10px', 
+    margin: '10px',
+    backgroundColor: '#007BFF', 
+    color: 'white', 
+    border: 'none', 
+    borderRadius: '4px' 
+};
 
 const All = {
     ButtonStyle,

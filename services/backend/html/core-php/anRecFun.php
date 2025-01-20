@@ -6,7 +6,7 @@ $factorial = function($num) use (&$factorial)
     if($num == 1)
         return 1;
 
-    // return statement when $m is not equals to 1.    
+    // return statement when $n is not equals to 1.    
     return $factorial($num - 1) * $num;
 };
 // function call

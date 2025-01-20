@@ -1,6 +1,5 @@
 <?php
 require_once(__DIR__.'/libs/cors.php');
-require_once(__DIR__.'/libs/secured.php');
 
 $token_file_path = __DIR__.'/token.txt';
 

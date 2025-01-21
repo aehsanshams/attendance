@@ -32,6 +32,7 @@ function HomePage() {
   return (
     <div style={{ maxWidth: "400px", margin: "auto", padding: "20px", textAlign: "center" }}>
       <h2>{content}</h2>
+      <h3>Welcome to Home page</h3>
       <button onClick={handleLogout} style={{ padding: "10px 20px", marginTop: "20px" }}>
         Logout
       </button>

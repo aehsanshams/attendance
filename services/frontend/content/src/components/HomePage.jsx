@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "axios";
+import {NavLink} from 'react-router';
 
 
 // import Navbar from "./Navbar";
@@ -39,7 +40,9 @@ function HomePage() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">Attendance</a>
+                  {/* <a className="nav-link active" aria-current="page" href="">Attendance</a> */}
+                  <NavLink to="/attendance" end>Attendance</NavLink>
+
                 </li>
               </ul>
               <ul className="navbar-nav mb-2 mb-lg-0">

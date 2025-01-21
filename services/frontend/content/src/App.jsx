@@ -7,7 +7,7 @@ import ForgotPassword from './components/Auth/ForgotPassword';
 import { BrowserRouter, Routes, Route } from "react-router";
 import Protected from './components/Auth/Protected';
 import Public from './components/Auth/Public';
-
+import Attendance from './components/Attendance';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <Route path="/login" element={<Public Component={UserLogin}/>} />
         <Route path="/register" element={<Public Component={SignUpForm}/>} />
         <Route path="/forgot-password" element={<Public Component={ForgotPassword}/>} />
+        <Route path="/attendance" element={<Protected Component={Attendance}/>}></Route>
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </BrowserRouter>

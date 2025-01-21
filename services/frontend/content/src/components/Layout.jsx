@@ -1,7 +1,7 @@
 import React from "react";
-import {NavLink} from 'react-router';
+import { NavLink } from 'react-router';
 
-function Layout({children}) {
+function Layout({ children }) {
 
     return (
         <>
@@ -34,11 +34,7 @@ function Layout({children}) {
                     </div>
                 </nav>
             </div>
-            <div style={{ Width: "100%", margin: "150px", padding: "20px", textAlign: "center" }}>
-                <h1>Welcome to Home page</h1>
-                <h2>below is server content:</h2>
-                {children}fgf
-            </div>
+            {children}
 
         </>
     );

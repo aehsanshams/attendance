@@ -39,7 +39,6 @@ function Protected({ Component }) {
     return (
         <Layout>
             <Component />
-            hyrtdhjkl;yuri8i7ytrgtsedrftg bb byvnhthdujukr76jh ytfny6y
         </Layout>
 
     )

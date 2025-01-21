@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css'
+// import './App.css'
 import UserLogin from './components/Auth/UserLogin';
 import HomePage from './components/HomePage';
 import SignUpForm from './components/Auth/SignUp';
@@ -7,6 +7,8 @@ import ForgotPassword from './components/Auth/ForgotPassword';
 import { BrowserRouter, Routes, Route } from "react-router";
 import Protected from './components/Auth/Protected';
 import Public from './components/Auth/Public';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

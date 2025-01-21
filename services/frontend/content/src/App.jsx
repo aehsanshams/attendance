@@ -7,7 +7,6 @@ import ForgotPassword from './components/Auth/ForgotPassword';
 import { BrowserRouter, Routes, Route } from "react-router";
 import Protected from './components/Auth/Protected';
 import Public from './components/Auth/Public';
-import Logout from './components/Auth/Logout';
 
 function App() {
   return (

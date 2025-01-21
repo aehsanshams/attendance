@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { redirect, useNavigate } from "react-router";
 import api from 'axios';
 import Layout from "../Layout";
+
 function Protected({ Component }) {
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');

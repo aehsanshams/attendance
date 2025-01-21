@@ -22,7 +22,6 @@ function App() {
         <Route path="/login" element={<Public Component={UserLogin}/>} />
         <Route path="/register" element={<Public Component={SignUpForm}/>} />
         <Route path="/forgot-password" element={<Public Component={ForgotPassword}/>} />
-        <Route path="/logout" element={<Public Component={Logout} />} />
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </BrowserRouter>

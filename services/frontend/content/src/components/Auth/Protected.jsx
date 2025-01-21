@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { redirect, useNavigate } from "react-router";
 import api from 'axios';
-function Protected({Component}) {
+import Layout from "../Layout";
+function Protected({ Component }) {
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
 
     const getUser = async () => {
-        try{
+        try {
             //http://localhost/profile.php?param=val&token=sldkfjsdkf
-            const url = 'http://localhost/profile.php?token='+localStorage.getItem('token');
+            const url = 'http://localhost/profile.php?token=' + localStorage.getItem('token');
             const response = await api.get(url);
             console.log(response);
             const data = response.data;
-            if (!data.loggedIn){
+            if (!data.loggedIn) {
                 return navigate('/login');
             }
             setLoading(false);
-        }catch (error) {
+        } catch (error) {
             console.log(error);
             setErrorMessage('Registration was not successful');
         }
@@ -29,13 +30,19 @@ function Protected({Component}) {
         getUser();
     }, []);
 
-    if(loading) {
+    if (loading) {
         return (
             <div>Loading...</div>
         );
     }
 
-    return <Component />
+    return (
+        <Layout>
+            <Component />
+            hyrtdhjkl;yuri8i7ytrgtsedrftg bb byvnhthdujukr76jh ytfny6y
+        </Layout>
+
+    )
 }
 
 export default Protected;

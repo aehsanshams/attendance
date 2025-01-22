@@ -2,10 +2,11 @@ import React from "react";
 import { NavLink } from 'react-router';
 
 const linkStyle = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: 'black'
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'black'
 };
+
 
 function Layout({ children }) {
 
@@ -31,10 +32,12 @@ function Layout({ children }) {
                             </ul>
                             <ul className="navbar-nav mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Profile</a>
+                                    {/* <a className="nav-link active" aria-current="page" href="#">Profile</a> */}
+                                    <NavLink to="/profile" end style={linkStyle}>Profile</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="#">Logout</a>
+                                    {/* <a className="nav-link active" aria-current="page" href="#">Logout</a> */}
+                                    <NavLink to="#" end style={linkStyle}>Logout</NavLink>
                                 </li>
                             </ul>
                         </div>

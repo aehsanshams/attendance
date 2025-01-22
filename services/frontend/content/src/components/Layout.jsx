@@ -32,8 +32,14 @@ function Layout({ children }) {
                             </ul>
                             <ul className="navbar-nav mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    {/* <a className="nav-link active" aria-current="page" href="#">Profile</a> */}
-                                    <NavLink to="/profile" end style={linkStyle}>Profile</NavLink>
+                                    {/* Conditionally render the Profile link */}
+                                    {location.pathname !== "/profile" && (
+                                        <li className="nav-item">
+                                            <NavLink to="/profile" end style={linkStyle}>
+                                                Profile
+                                            </NavLink>
+                                        </li>
+                                    )}
                                 </li>
                                 <li className="nav-item">
                                     {/* <a className="nav-link active" aria-current="page" href="#">Logout</a> */}

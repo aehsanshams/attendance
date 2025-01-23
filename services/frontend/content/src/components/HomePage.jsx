@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import api from "axios";
-// import { NavLink } from 'react-router';
-// import Navbar from "./Navbar";
 
 function HomePage() {
   const [loading, setLoading] = useState(true);

@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { redirect, useNavigate } from "react-router";
-import api from 'axios';
+import { useNavigate } from "react-router";
+import api from "axios";
 import Layout from "../Layout";
 
 function Protected({ Component }) {
     const [loading, setLoading] = useState(true);
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
-
 
     const getUser = async () => {
         try {
-            //http://localhost/profile.php?param=val&token=sldkfjsdkf
-            const url = 'http://localhost/profile.php?token=' + localStorage.getItem('token');
+            const url = "http://localhost/profile.php?token=" + localStorage.getItem("token");
             const response = await api.get(url);
-            console.log(response);
             const data = response.data;
             if (!data.loggedIn) {
-                return navigate('/login');
+                navigate("/login");
+            } else {
+                setLoading(false);
             }
-            setLoading(false);
         } catch (error) {
-            console.log(error);
-            setErrorMessage('Registration was not successful');
+            console.error(error);
+            setErrorMessage("An error occurred while verifying the user.");
+            navigate("/login"); // Redirect to login if there's an error
         }
-
     };
 
     useEffect(() => {
@@ -32,17 +30,18 @@ function Protected({ Component }) {
     }, []);
 
     if (loading) {
-        return (
-            <div>Loading...</div>
-        );
+        return <div>Loading...</div>;
+    }
+
+    if (errorMessage) {
+        return <div>Error: {errorMessage}</div>;
     }
 
     return (
         <Layout>
             <Component />
         </Layout>
-
-    )
+    );
 }
 
 export default Protected;

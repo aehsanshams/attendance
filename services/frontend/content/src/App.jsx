@@ -9,7 +9,7 @@ import Protected from './components/Auth/Protected';
 import Public from './components/Auth/Public';
 import Attendance from './components/Attendance';
 import Profile from './components/Profile';
-// import Logout from './components/Logout';
+import Logout from './components/Logout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import ContentHighlighter from './components/TextHighlighter';
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="/forgot-password" element={<Public Component={ForgotPassword}/>} />
         <Route path="/attendance" element={<Protected Component={Attendance}/>}></Route>
         <Route path="/profile" element={<Protected Component={Profile}/>}></Route>
-        {/* <Route path="/logout" element={<Protected Component={Logout}/>}></Route> */}
+        <Route path="/logout" element={<Protected Component={Logout}/>}></Route>
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </BrowserRouter>

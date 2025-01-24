@@ -29,6 +29,14 @@ export const ButtonStyle1 = {
     border: 'none', 
     borderRadius: '4px' 
 };
+export const ClockOutButton = {
+    width: '100px', 
+    padding: '10px', 
+    backgroundColor: '#007BFF', 
+    color: 'white', 
+    border: 'none', 
+    borderRadius: '4px' 
+}
 
 const All = {
     ButtonStyle,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // import style from './../../assets/styles';
+import {ClockOutButton} from './../../src/assets/styles';
 
 // Reusable Loading Component
 const Loading = () => <>Loading...</>;
@@ -32,7 +33,7 @@ const ClockInForm = ({ handleClockIn }) => {
         />
         <br />
         <br />
-        <button type="submit">Clock In</button>
+        <button style={ClockOutButton} type="submit">Clock In</button>
       </form>
     </div>
   );
@@ -52,7 +53,7 @@ const ClockOutForm = ({ handleClockOut }) => {
   };
 
   return (
-    <div style={{ width: "100%", margin: "150px", padding: "20px", textAlign: "center" }}>
+    <div style={{ width: "100%", marginTop: "100px", padding: "20px", textAlign: "center" }}>
       <h1>Clock Out</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="clock-out">Select Clock-Out Time:</label>
@@ -65,7 +66,7 @@ const ClockOutForm = ({ handleClockOut }) => {
         />
         <br />
         <br />
-        <button type="submit">Clock Out</button>
+        <button style={ClockOutButton} type="submit">Clock Out</button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router";
-import style from './../../assets/styles';
+import style from './../../assets/styles.js';
 import api from 'axios';
 import { redirect, useNavigate } from "react-router";
 

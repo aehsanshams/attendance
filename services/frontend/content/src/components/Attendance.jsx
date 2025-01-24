@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// import style from './../../assets/styles';
 
 // Reusable Loading Component
 const Loading = () => <>Loading...</>;
@@ -18,7 +19,7 @@ const ClockInForm = ({ handleClockIn }) => {
   };
 
   return (
-    <div style={{ width: "100%", margin: "150px", padding: "20px", textAlign: "center" }}>
+    <div style={{ width: "100%", marginTop: "100px", padding: "20px", textAlign: "center" }}>
       <h1>Clock In</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="clock-in">Select Clock-In Time:</label>

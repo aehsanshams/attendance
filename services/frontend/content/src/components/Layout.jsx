@@ -6,6 +6,14 @@ const linkStyle = {
     textDecoration: "none",
     color: 'black'
 };
+const footerStyle = {
+    marginTop: "auto",
+    backgroundColor: "#f2f2f2",
+    padding: "0.5rem",
+    textAlign: "center",
+    fontSize: "0.9rem",
+    color: "#6c757d"
+};
 
 
 function Layout({ children }) {
@@ -51,6 +59,16 @@ function Layout({ children }) {
                 </nav>
             </div>
             {children}
+
+            <footer className="container" style={footerStyle}>
+                <div>
+                    <p>
+                        <a href="/terms" style={linkStyle}>Terms of Service</a> |
+                        <a href="/privacy" style={linkStyle}>Privacy Policy</a>
+                    </p>
+                    <p>© {new Date().getFullYear()} aehsanshams. All Rights Reserved.</p>
+                </div>
+            </footer>
 
         </>
     );

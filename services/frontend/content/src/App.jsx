@@ -11,6 +11,7 @@ import Attendance from './components/Attendance';
 import Profile from './components/Profile';
 // import Logout from './components/Logout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import ContentHighlighter from './components/TextHighlighter';
 
 function App() {
   return (

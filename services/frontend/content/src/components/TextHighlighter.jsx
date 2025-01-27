@@ -10,17 +10,17 @@ function TextHilighter() {
         // position :- 11
         // omn 11th position : k
 
-        const before = input.substring(0, position-1)
+        const before = input.substring(0, position - 1)
         // abcdefghij ; 0, 10
         // console.log('startP:', 0, 'endP:', position-1);
         // console.log('before: ', before);
 
-        let center = input.substring(position-1, position);
+        let center = input.substring(position - 1, position);
         // k; 10,10
         // console.log('startP:', position-1, 'endP:', position);
         // console.log('center: ', center);
 
-        center = (<span style={{backgroundColor:'yellow'}}>{center} </span>);
+        center = (<span style={{ backgroundColor: 'yellow' }}>{center} </span>);
         // console.log(center);
 
         const after = input.substring(position, input.length);
@@ -68,11 +68,11 @@ function TextHilighter() {
                     <button onClick={highlight}>Hilight</button>
                 </div>
                 <div className="mt-6">
-                <label className="block mb-2 font-medium text-gray-700">Result:</label>
-                <div className="border border-gray-300 rounded p-2 w-96 bg-white">
-                    {textHighlighted}
+                    <label className="block mb-2 font-medium text-gray-700">Result:</label>
+                    <div className="border border-gray-300 rounded p-2 w-96 bg-white">
+                        {textHighlighted}
+                    </div>
                 </div>
-            </div>
             </div>
 
         </>

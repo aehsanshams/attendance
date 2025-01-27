@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 function TextHilighter() {
-    const [input, setInput] = useState('jhiul');
-    const [position, setPosition] = useState(0);
+    const [input, setInput] = useState('abcdefghijklmn');
+    const [position, setPosition] = useState(11);
 
     const [textHighlighted, setTextHighlighted] = useState('fdef');
 
@@ -10,14 +10,21 @@ function TextHilighter() {
         // position :- 11
         // omn 11th position : k
 
-        const before = input.substring(0, (position-2))
-        // abcdefghij ; 0, 9
+        const before = input.substring(0, position-1)
+        // abcdefghij ; 0, 10
+        console.log('startP:', 0, 'endP:', position-1);
+        console.log('before: ', before);
 
-        const center = input.substring(position-1, position-1)
+        const center = input.substring(position-1, position);
         // k; 10,10
+        console.log('startP:', position-1, 'endP:', position);
+        console.log('center: ', center);
 
-        const after = input.substring(position, input.length-1)
+        const after = input.substring(position, input.length);
         // lmn; 11, 13
+        console.log('startP:', position, 'endP:', input.length);
+        console.log('after: ', after);
+
         const result = before + center + after;
         setTextHighlighted(result);
 

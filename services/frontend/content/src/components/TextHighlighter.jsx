@@ -3,7 +3,7 @@ function TextHilighter() {
     const [input, setInput] = useState('abcdefghijklmn');
     const [position, setPosition] = useState(11);
 
-    const [textHighlighted, setTextHighlighted] = useState('fdef');
+    const [textHighlighted, setTextHighlighted] = useState(<></>);
 
     const highlight = () => {
         // input :- "abcdefghijklmn";
@@ -15,17 +15,19 @@ function TextHilighter() {
         console.log('startP:', 0, 'endP:', position-1);
         console.log('before: ', before);
 
-        const center = input.substring(position-1, position);
+        let center = input.substring(position-1, position);
         // k; 10,10
         console.log('startP:', position-1, 'endP:', position);
         console.log('center: ', center);
+        center = (<span style={{backgroundColor:'yellow'}}>{center} </span>);
+        console.log(center);
 
         const after = input.substring(position, input.length);
         // lmn; 11, 13
         console.log('startP:', position, 'endP:', input.length);
         console.log('after: ', after);
 
-        const result = before + center + after;
+        const result = <>{before}{center} {after}</>;
         setTextHighlighted(result);
 
 
@@ -66,10 +68,9 @@ function TextHilighter() {
                     <button onClick={highlight}>Hilight</button>
                 </div>
                 <div>
-                    <label htmlFor="result">Result</label>
-                    <pre>
+                    <label htmlFor="result"></label>
+
                         {textHighlighted}
-                    </pre>
                 </div>
             </div>
 

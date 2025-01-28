@@ -37,7 +37,7 @@ function TextHilighter() {
 
     return (
         <>
-            <h1>Hello this textHilighter</h1>
+            <h1>Hello This is textHilighter</h1>
 
             <div className="flex justify-center items-center min-h-screen p-4 bg-gray-100">
                 <div>

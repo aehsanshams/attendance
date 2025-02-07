@@ -20,7 +20,7 @@ body {
 h1 {
     font-size: x-large;
     text-align: center;
-    color: #327c35;
+    color: hsl(352, 39%, 49%);
 }
 
 fieldset {
@@ -70,7 +70,7 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-    background-color: #4caf50;
+    background-color: hsl(352, 39%, 49%);
     width: 40%;
     font-size: 16px;
 }

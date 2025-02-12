@@ -33,19 +33,19 @@ function CounterApp() {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-4">React Counter</h1>
+    <div className="">
+      <h1 className="">React Counter</h1>
       <input
         type="number"
         value={initialValue}
         onChange={updateInitialValue}
-        className="border p-2 rounded mb-4 text-center"
+        className=""
       />
-      <p className="text-2xl mb-4">Count: {count}</p>
-      <div className="flex gap-4">
-        <button onClick={increase} className="bg-green-500 text-white px-4 py-2 rounded">+1</button>
-        <button onClick={decrease} className="bg-red-500 text-white px-4 py-2 rounded">-1</button>
-        <button onClick={reset} className="bg-blue-500 text-white px-4 py-2 rounded">Reset</button>
+      <p className="">Count: {count}</p>
+      <div className="">
+        <button onClick={increase} className="">+1</button>
+        <button onClick={decrease} className="">-1</button>
+        <button onClick={reset} className="">Reset</button>
       </div>
     </div>
   );

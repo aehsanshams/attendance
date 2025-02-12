@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
-import './App.css';
+// import './App.css';
 import TextHilighter from './components/TextHighlighter';
-import Counter from './components/Counter';
 import Form from './components/Form';
+import CounterApp from './components/Counter';
 
 
 function App() {
   return (
     <>
-    {/* <TextHilighter/>
-    <Counter/> */}
-    <Form/>
+    {/* <TextHilighter/> */}
+    <CounterApp/>
+    {/* <Form/> */}
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+// import './index.css';
 import UserLogin from './components/Auth/UserLogin';
 import HomePage from './components/HomePage';
 import SignUpForm from './components/Auth/SignUp';
